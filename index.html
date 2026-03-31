@@ -258,7 +258,7 @@ body::before {
   <div class="win-card">
     <div class="win-emoji">🏆</div>
     <div class="win-title">מצאתם את האפיקומן!</div>
-    <div class="win-text">🎉 כל הכבוד! עברתם את כל 10 התחנות!<br><br>שלחו צילום מסך למספר <strong>XXX</strong><br>וכתבו את שמות המשתתפים.<br><br>חג פסח שמח! 🌿</div>
+    <div class="win-text">🎉 כל הכבוד! כל התחנות הושלמו!<br><br>חג פסח שמח! 🌿</div>
     <button class="btn-win" onclick="document.getElementById('win-overlay').classList.remove('show')">🫓 סיום</button>
   </div>
 </div>
@@ -268,22 +268,22 @@ body::before {
 // STATION DATA
 // ══════════════════════════════
 const STATIONS = [
-  { id:1,  name:'חידת פסח',        icon:'🌿', code:'111', completionType:'answer', correctAnswer:'6' },
-  { id:2,  name:'תפזורת המכות',    icon:'🐸', code:'222', completionType:'answer', correctAnswer:'11' },
-  { id:3,  name:'פירמידת פסח',     icon:'🔺', code:'333', completionType:'allCorrect' },
-  { id:4,  name:'משחק האפיקומן',   icon:'🫓', code:'444', completionType:'minWords', minWords:5 },
-  { id:5,  name:'חבר מספר לשם',    icon:'🔢', code:'555', completionType:'allCorrect' },
-  { id:6,  name:'מה נשתנה',        icon:'🍷', code:'666', completionType:'allCorrect' },
-  { id:7,  name:'חידת גימטריה',    icon:'✡️', code:'777', completionType:'allCorrect' },
-  { id:8,  name:'חידת תמונה',      icon:'🖼️', code:'888', completionType:'allCorrect' },
-  { id:9,  name:'כתב חרטומים',     icon:'𓂀', code:'999', completionType:'answer', correctAnswer:'20' },
-  { id:10, name:'חידת חשבון',      icon:'🧮', code:'000', completionType:'answer', correctAnswer:'41' }
+  { id:1,  name:'תחנה 1',  icon:'🐱', code:'1357', completionType:'imageAnswer' },
+  { id:2,  name:'תחנה 2',  icon:'🦋', code:'2489', completionType:'imageAnswer' },
+  { id:3,  name:'תחנה 3',  icon:'🔢', code:'9876', completionType:'imageAnswer' },
+  { id:4,  name:'תחנה 4',  icon:'🎨', code:'1982', completionType:'imageAnswer' },
+  { id:5,  name:'תחנה 5',  icon:'💻', code:'2026', completionType:'imageAnswer' },
+  { id:6,  name:'תחנה 6',  icon:'🐦', code:'1493', completionType:'imageAnswer' },
+  { id:7,  name:'תחנה 7',  icon:'🌸', code:'1234', completionType:'imageAnswer' },
+  { id:8,  name:'תחנה 8',  icon:'🥕', code:'4334', completionType:'imageAnswer' },
+  { id:9,  name:'תחנה 9',  icon:'🫓', code:'2222', completionType:'imageAnswer' },
+  { id:10, name:'תחנה 10', icon:'📜', code:'1470', completionType:'imageAnswer' }
 ];
 
 // ══════════════════════════════
 // STATE
 // ══════════════════════════════
-const STORAGE_KEY = 'afikoman_v2';
+const STORAGE_KEY = 'afikoman_kids_v1';
 let state = { completed: [] };
 let currentStation = null;
 
@@ -408,6 +408,7 @@ function resetAll() {
   saveState();
   renderProgress();
 }
+
 
 // ══════════════════════════════
 // INIT
